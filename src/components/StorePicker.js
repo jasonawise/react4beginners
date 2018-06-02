@@ -3,12 +3,17 @@ import { format } from "util";
 import { getFunName } from "../helpers";
 
 class StorePicker extends React.Component {
+  myInput = React.createRef();
+  goToStore = event => {
+    event.preventDefault();
+  };
   render() {
     return (
-      <form className="store-selector">
+      <form className="store-selector" onSubmit={this.goToStore}>
         <h2>Please Enter a Store</h2>
         <input
           type="text"
+          ref={this.myInput}
           required
           name=""
           id=""
