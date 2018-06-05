@@ -8,7 +8,7 @@ class StorePicker extends React.Component {
     // 1. Stop the form from submitting
     event.preventDefault();
     // 2. get the text from that input
-    const storeName = this.refs.myInput.value;
+    const storeName = this.myInput.current.value;
     // 3. Change the page to /store/whatever-they-entered
     this.props.history.push(`/store/${storeName}`);
   };
@@ -18,7 +18,7 @@ class StorePicker extends React.Component {
         <h2>Please Enter A Store</h2>
         <input
           type="text"
-          ref="myInput"
+          ref={this.myInput}
           required
           placeholder="Store Name"
           defaultValue={getFunName()}
